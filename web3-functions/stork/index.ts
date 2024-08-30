@@ -8,14 +8,14 @@ import { ORACLE_ABI } from "./ocale_abi";
 import { Contract } from "ethers";
 
 Web3Function.onRun(async (context: Web3FunctionContext) => {
-  const { userArgs, multiChainProvider } = context;
+  const { userArgs, multiChainProvider, secrets } = context;
 
   const provider = multiChainProvider.default();
   console.log("Running with the following chain id: ", (await provider.getNetwork()).chainId);
 
-  const address = process.env.URL; // Set the rest server address
+  const address =  await secrets.get('URL'); // Set the rest server address
 
-  const client = new PullServiceClient(address, process.env.AUTH_TOKEN);
+  const client = new PullServiceClient(address, await secrets.get('AUTH_TOKEN'));
   const contractAddress = userArgs.oracle as string ?? "0xacc0a0cf13571d30b4b8637996f5d6d774d4fd62";
 
   const request = userArgs.assets as string ?? "BTCUSD";

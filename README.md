@@ -5,7 +5,7 @@ Gelato Web3 Functions together with Stork offer the ability to create fine-tuned
 
 In this repository, you will find the following demo here:
 
-[W3F to Stork](https://github.com/gelatodigital/w3f-poc-stork/tree/main/web3-functions/stork): this demo directly interacts with the Stork network.
+[W3F to Stork](https://github.com/gelatodigital/w3f-poc-stork/tree/master/web3-functions/stork): this demo directly interacts with the Stork network.
 
 
 > [!NOTE]
